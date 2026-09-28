@@ -1,0 +1,44 @@
+{
+  "Lixo Irregular": {
+    "artigo": "Constituição Federal, Art. 225 c/c Lei 12.305/2010 (PNRS)",
+    "texto": "Todos têm direito ao meio ambiente ecologicamente equilibrado. A Política Nacional de Resíduos Sólidos responsabiliza geradores e o poder público pela destinação adequada dos resíduos.",
+    "canais": [
+      "Comlurb - 1746 (Central de Atendimento do Rio)",
+      "Guarda Ambiental Municipal - Rio de Janeiro"
+    ]
+  },
+  "Queimada": {
+    "artigo": "Constituição Federal, Art. 225 c/c Lei 9.605/1998 (Crimes Ambientais)",
+    "texto": "Provocar incêndio em mata ou floresta é crime ambiental. Todo cidadão tem direito ao ar limpo e ao meio ambiente equilibrado.",
+    "canais": [
+      "Corpo de Bombeiros - 193",
+      "Linha Verde INEA-RJ - 0800 285 2828",
+      "IBAMA - Linha Verde 0800 61 8080"
+    ]
+  },
+  "Desmatamento/Poda Ilegal": {
+    "artigo": "Constituição Federal, Art. 225 §1º VII c/c Lei 12.651/2012 (Código Florestal)",
+    "texto": "É dever do poder público proteger a flora, sendo vedadas práticas que coloquem em risco sua função ecológica. Corte e poda irregulares configuram infração ambiental.",
+    "canais": [
+      "Secretaria Municipal de Meio Ambiente - Rio de Janeiro",
+      "Linha Verde INEA-RJ - 0800 285 2828"
+    ]
+  },
+  "Poluição de Água": {
+    "artigo": "Constituição Federal, Art. 225 c/c Lei 9.433/1997 (Política Nacional de Recursos Hídricos)",
+    "texto": "A água é bem de domínio público e recurso natural limitado. Poluir corpos hídricos é infração ambiental e crime previsto na Lei 9.605/1998.",
+    "canais": [
+      "CEDAE - 0800 282 1195",
+      "Linha Verde INEA-RJ - 0800 285 2828"
+    ]
+  },
+  "Maus-Tratos a Animais": {
+    "artigo": "Constituição Federal, Art. 225 §1º VII c/c Lei 14.064/2020",
+    "texto": "É vedada a submissão de animais a crueldade. Maus-tratos a cães e gatos configuram crime com pena de reclusão de 2 a 5 anos.",
+    "canais": [
+      "Delegacia de Proteção ao Meio Ambiente (DPMA-RJ)",
+      "Disque-Denúncia - 2253-1177",
+      "Guarda Ambiental Municipal - Rio de Janeiro"
+    ]
+  }
+}
