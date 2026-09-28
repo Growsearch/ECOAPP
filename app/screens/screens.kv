@@ -1,0 +1,515 @@
+#:import dp kivy.metrics.dp
+
+
+<LoginScreen>:
+    name: "login"
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: 0.94, 0.97, 0.90, 1
+
+        MDTopAppBar:
+            title: "EcoDenúncia Cidadã"
+            md_bg_color: 0.15, 0.55, 0.25, 1
+            specific_text_color: 1, 1, 1, 1
+            elevation: 4
+
+        ScrollView:
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: dp(24)
+                spacing: dp(16)
+                adaptive_height: True
+
+                MDLabel:
+                    id: titulo
+                    text: "Entrar"
+                    font_style: "H5"
+                    adaptive_height: True
+                    theme_text_color: "Custom"
+                    text_color: 0.15, 0.45, 0.20, 1
+                    bold: True
+
+                MDLabel:
+                    text: "Sua conta identifica suas denúncias e curtidas. Nenhum dado é enviado externamente."
+                    adaptive_height: True
+                    theme_text_color: "Secondary"
+
+                MDTextField:
+                    id: email_field
+                    hint_text: "E-mail"
+
+                MDTextField:
+                    id: senha_field
+                    hint_text: "Senha"
+                    password: True
+                    helper_text: "Mínimo 6 caracteres"
+                    helper_text_mode: "on_focus"
+
+                MDRaisedButton:
+                    id: acao_btn
+                    text: "Entrar"
+                    md_bg_color: 0.15, 0.55, 0.25, 1
+                    size_hint_x: 1
+                    height: dp(56)
+                    on_release: root.submeter()
+
+                MDFlatButton:
+                    id: alternar_btn
+                    text: "Criar nova conta"
+                    size_hint_x: 1
+                    height: dp(48)
+                    theme_text_color: "Custom"
+                    text_color: 0.15, 0.55, 0.25, 1
+                    on_release: root.alternar_modo()
+
+
+<HomeScreen>:
+    name: "home"
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: 0.94, 0.97, 0.90, 1
+
+        MDTopAppBar:
+            title: "EcoDenúncia Cidadã"
+            md_bg_color: 0.15, 0.55, 0.25, 1
+            specific_text_color: 1, 1, 1, 1
+            elevation: 4
+            right_action_items: [["logout", lambda x: root.sair()]]
+
+        ScrollView:
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: dp(20)
+                spacing: dp(16)
+                adaptive_height: True
+
+                MDLabel:
+                    id: user_label
+                    text: ""
+                    font_style: "Caption"
+                    adaptive_height: True
+                    theme_text_color: "Secondary"
+
+                MDCard:
+                    orientation: "vertical"
+                    padding: dp(16)
+                    spacing: dp(6)
+                    size_hint_y: None
+                    height: self.minimum_height
+                    md_bg_color: 1, 1, 1, 1
+                    radius: [dp(12)]
+                    elevation: 2
+
+                    MDLabel:
+                        text: "Meio ambiente é direito seu"
+                        font_style: "H6"
+                        adaptive_height: True
+                        theme_text_color: "Custom"
+                        text_color: 0.15, 0.45, 0.20, 1
+
+                    MDLabel:
+                        text: "A Constituição Federal (Art. 225) garante a todo cidadão o direito ao meio ambiente equilibrado. Este app conecta você às instituições responsáveis, alinhado à ODS 16."
+                        adaptive_height: True
+                        theme_text_color: "Secondary"
+
+                MDCard:
+                    orientation: "vertical"
+                    padding: dp(16)
+                    spacing: dp(10)
+                    size_hint_y: None
+                    height: self.minimum_height
+                    md_bg_color: 1, 1, 1, 1
+                    radius: [dp(12)]
+                    elevation: 2
+
+                    MDLabel:
+                        text: "Como usar o app"
+                        font_style: "Subtitle1"
+                        adaptive_height: True
+                        theme_text_color: "Custom"
+                        text_color: 0.15, 0.45, 0.20, 1
+                        bold: True
+
+                    MDBoxLayout:
+                        orientation: "horizontal"
+                        adaptive_height: True
+                        spacing: dp(10)
+                        MDLabel:
+                            text: "1."
+                            adaptive_height: True
+                            size_hint_x: None
+                            width: dp(20)
+                            bold: True
+                            theme_text_color: "Custom"
+                            text_color: 0.15, 0.55, 0.25, 1
+                        MDLabel:
+                            text: "Toque em [b]Nova Denúncia[/b] para registrar uma ocorrência ambiental."
+                            markup: True
+                            adaptive_height: True
+
+                    MDBoxLayout:
+                        orientation: "horizontal"
+                        adaptive_height: True
+                        spacing: dp(10)
+                        MDLabel:
+                            text: "2."
+                            adaptive_height: True
+                            size_hint_x: None
+                            width: dp(20)
+                            bold: True
+                            theme_text_color: "Custom"
+                            text_color: 0.15, 0.55, 0.25, 1
+                        MDLabel:
+                            text: "Escolha a [b]categoria[/b], descreva o ocorrido, informe o CEP e (opcional) anexe uma foto."
+                            markup: True
+                            adaptive_height: True
+
+                    MDBoxLayout:
+                        orientation: "horizontal"
+                        adaptive_height: True
+                        spacing: dp(10)
+                        MDLabel:
+                            text: "3."
+                            adaptive_height: True
+                            size_hint_x: None
+                            width: dp(20)
+                            bold: True
+                            theme_text_color: "Custom"
+                            text_color: 0.15, 0.55, 0.25, 1
+                        MDLabel:
+                            text: "Ao enviar, o app mostra o [b]amparo legal[/b] e os [b]canais oficiais[/b] do Rio de Janeiro."
+                            markup: True
+                            adaptive_height: True
+
+                    MDBoxLayout:
+                        orientation: "horizontal"
+                        adaptive_height: True
+                        spacing: dp(10)
+                        MDLabel:
+                            text: "4."
+                            adaptive_height: True
+                            size_hint_x: None
+                            width: dp(20)
+                            bold: True
+                            theme_text_color: "Custom"
+                            text_color: 0.15, 0.55, 0.25, 1
+                        MDLabel:
+                            text: "Veja denúncias da comunidade no [b]Feed[/b] e curta as que quiser apoiar."
+                            markup: True
+                            adaptive_height: True
+
+                MDRaisedButton:
+                    text: "Nova Denúncia"
+                    md_bg_color: 0.15, 0.55, 0.25, 1
+                    size_hint_x: 1
+                    height: dp(56)
+                    font_size: "16sp"
+                    on_release: root.ir_para_denuncia()
+
+                MDRaisedButton:
+                    text: "Feed da Comunidade"
+                    md_bg_color: 0.20, 0.40, 0.75, 1
+                    size_hint_x: 1
+                    height: dp(52)
+                    on_release: root.ir_para_feed()
+
+                MDFlatButton:
+                    text: "Minhas Denúncias"
+                    size_hint_x: 1
+                    height: dp(48)
+                    theme_text_color: "Custom"
+                    text_color: 0.15, 0.55, 0.25, 1
+                    on_release: root.ir_para_historico()
+
+                MDFlatButton:
+                    text: "Gráfico de Denúncias"
+                    size_hint_x: 1
+                    height: dp(48)
+                    theme_text_color: "Custom"
+                    text_color: 0.15, 0.55, 0.25, 1
+                    on_release: root.ir_para_grafico()
+
+
+<FormScreen>:
+    name: "form"
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: 0.94, 0.97, 0.90, 1
+
+        MDTopAppBar:
+            title: "Nova Denúncia"
+            md_bg_color: 0.15, 0.55, 0.25, 1
+            specific_text_color: 1, 1, 1, 1
+            left_action_items: [["arrow-left", lambda x: setattr(root.manager, 'current', 'home')]]
+
+        ScrollView:
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: dp(16)
+                spacing: dp(12)
+                adaptive_height: True
+
+                MDLabel:
+                    text: "Contato"
+                    font_style: "Subtitle1"
+                    adaptive_height: True
+
+                MDTextField:
+                    id: email_field
+                    hint_text: "E-mail de contato"
+
+                MDTextField:
+                    id: telefone_field
+                    hint_text: "Telefone (DDD + número)"
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    adaptive_height: True
+                    spacing: dp(8)
+
+                    MDTextField:
+                        id: cep_field
+                        hint_text: "CEP do local"
+                        helper_text: "8 dígitos"
+                        helper_text_mode: "on_focus"
+                        size_hint_x: 0.65
+                        on_text: root.cep_alterado(self.text)
+
+                    MDRaisedButton:
+                        text: "Buscar CEP"
+                        md_bg_color: 0.15, 0.55, 0.25, 1
+                        size_hint_x: 0.35
+                        on_release: root.buscar_cep()
+
+                MDLabel:
+                    id: cep_status
+                    text: ""
+                    theme_text_color: "Secondary"
+                    font_style: "Caption"
+                    adaptive_height: True
+
+                MDLabel:
+                    text: "Detalhes"
+                    font_style: "Subtitle1"
+                    adaptive_height: True
+                    padding_y: dp(8)
+
+                MDRaisedButton:
+                    id: categoria_btn
+                    text: "Selecionar categoria"
+                    md_bg_color: 1, 1, 1, 1
+                    theme_text_color: "Custom"
+                    text_color: 0.15, 0.45, 0.20, 1
+                    line_color: 0.15, 0.55, 0.25, 1
+                    size_hint_x: 1
+                    height: dp(48)
+                    on_release: root.abrir_categorias(self)
+
+                MDTextField:
+                    id: descricao_field
+                    hint_text: "Descrição do ocorrido"
+                    multiline: True
+
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    adaptive_height: True
+                    spacing: dp(8)
+
+                    MDFlatButton:
+                        text: "Selecionar Foto"
+                        theme_text_color: "Custom"
+                        text_color: 0.15, 0.55, 0.25, 1
+                        on_release: root.selecionar_anexo()
+
+                    MDLabel:
+                        id: anexo_label
+                        text: "Nenhum anexo selecionado"
+                        theme_text_color: "Secondary"
+                        font_style: "Caption"
+
+                MDRaisedButton:
+                    text: "Enviar Denúncia"
+                    md_bg_color: 0.15, 0.55, 0.25, 1
+                    size_hint_x: 1
+                    height: dp(56)
+                    on_release: root.enviar()
+
+
+<SuccessScreen>:
+    name: "success"
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: 0.94, 0.97, 0.90, 1
+
+        MDTopAppBar:
+            title: "Denúncia registrada"
+            md_bg_color: 0.15, 0.55, 0.25, 1
+            specific_text_color: 1, 1, 1, 1
+
+        ScrollView:
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: dp(20)
+                spacing: dp(16)
+                adaptive_height: True
+
+                MDIcon:
+                    icon: "check-circle"
+                    theme_icon_color: "Custom"
+                    icon_color: 0.15, 0.55, 0.25, 1
+                    font_size: "72sp"
+                    halign: "center"
+                    size_hint_y: None
+                    height: dp(80)
+
+                MDLabel:
+                    text: "Sua denúncia foi registrada."
+                    halign: "center"
+                    font_style: "H6"
+                    adaptive_height: True
+
+                MDCard:
+                    orientation: "vertical"
+                    padding: dp(16)
+                    size_hint_y: None
+                    height: self.minimum_height
+                    md_bg_color: 1, 1, 1, 1
+                    radius: [dp(12)]
+                    elevation: 2
+
+                    MDLabel:
+                        id: artigo_label
+                        text: ""
+                        font_style: "Subtitle2"
+                        theme_text_color: "Custom"
+                        text_color: 0.15, 0.45, 0.20, 1
+                        adaptive_height: True
+
+                    MDLabel:
+                        id: texto_label
+                        text: ""
+                        adaptive_height: True
+                        theme_text_color: "Secondary"
+
+                    MDLabel:
+                        text: "Canais oficiais:"
+                        font_style: "Subtitle2"
+                        adaptive_height: True
+                        padding_y: dp(8)
+
+                    MDLabel:
+                        id: canais_label
+                        text: ""
+                        adaptive_height: True
+
+                MDRaisedButton:
+                    text: "Voltar ao Início"
+                    md_bg_color: 0.15, 0.55, 0.25, 1
+                    size_hint_x: 1
+                    height: dp(56)
+                    on_release: root.voltar_home()
+
+
+<ChartScreen>:
+    name: "chart"
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: 0.94, 0.97, 0.90, 1
+
+        MDTopAppBar:
+            title: "Denúncias por Bairro"
+            md_bg_color: 0.15, 0.55, 0.25, 1
+            specific_text_color: 1, 1, 1, 1
+            left_action_items: [["arrow-left", lambda x: setattr(root.manager, 'current', 'home')]]
+
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: dp(12)
+            spacing: dp(10)
+
+            MDLabel:
+                text: "Últimos 6 meses · Top 5 bairros"
+                font_style: "Caption"
+                theme_text_color: "Secondary"
+                size_hint_y: None
+                height: dp(20)
+
+            MDGridLayout:
+                id: stats_container
+                cols: 2
+                spacing: dp(8)
+                size_hint_y: None
+                height: self.minimum_height
+                padding: 0
+
+            MDCard:
+                id: chart_container
+                orientation: "vertical"
+                padding: dp(6)
+                size_hint_y: 0.55
+                md_bg_color: 1, 1, 1, 1
+                radius: [dp(10)]
+                elevation: 2
+
+            MDLabel:
+                id: meses_label
+                text: ""
+                font_style: "Caption"
+                markup: True
+                theme_text_color: "Secondary"
+                size_hint_y: None
+                height: dp(24)
+
+            ScrollView:
+                size_hint_y: 0.35
+                MDBoxLayout:
+                    id: legenda_container
+                    orientation: "vertical"
+                    padding: dp(4)
+                    spacing: dp(4)
+                    size_hint_y: None
+                    height: self.minimum_height
+
+
+<HistoryScreen>:
+    name: "history"
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: 0.94, 0.97, 0.90, 1
+
+        MDTopAppBar:
+            title: "Minhas Denúncias"
+            md_bg_color: 0.15, 0.55, 0.25, 1
+            specific_text_color: 1, 1, 1, 1
+            left_action_items: [["arrow-left", lambda x: setattr(root.manager, 'current', 'home')]]
+
+        ScrollView:
+            MDBoxLayout:
+                id: lista_container
+                orientation: "vertical"
+                padding: dp(16)
+                spacing: dp(12)
+                size_hint_y: None
+                height: self.minimum_height
+
+
+<FeedScreen>:
+    name: "feed"
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: 0.94, 0.97, 0.90, 1
+
+        MDTopAppBar:
+            title: "Feed da Comunidade"
+            md_bg_color: 0.15, 0.55, 0.25, 1
+            specific_text_color: 1, 1, 1, 1
+            left_action_items: [["arrow-left", lambda x: setattr(root.manager, 'current', 'home')]]
+
+        ScrollView:
+            MDBoxLayout:
+                id: feed_container
+                orientation: "vertical"
+                padding: dp(16)
+                spacing: dp(12)
+                size_hint_y: None
+                height: self.minimum_height
